@@ -1,0 +1,667 @@
+/* The thing itself*/
+/* body {
+    background-image:url('images/Alm.png');
+    background-color: #aeafe6;
+} */
+
+:root {
+    color-scheme: dark;
+}
+/* body {
+    background:#FFF;
+    color:#000;
+    font-family:verdana, sans-serif;
+    font-size:10pt;
+    margin:0;
+    padding:10px;
+} */
+
+/* a:link, a:visited {
+    color:#008;
+    font-weight:bold;
+    text-decoration:none;
+} */
+
+/* a:active, a:hover {
+    color:#ACF;
+} */
+
+.info {
+    font-weight:bold;
+}
+
+h2 {
+    text-align: center;
+    padding-left: 0px;
+    margin-left: 0px;
+}
+
+button {
+    font-family:inherit;
+    cursor:pointer;
+    border:0;
+    border-radius:3px;
+    padding:0.3em 0.5em;
+    background:#CCC;
+    color:#000;
+}
+
+button:hover {
+    background:#DDD;
+}
+
+button.disabled {
+    background:#DDD;
+    color:#888;
+    cursor:not-allowed;
+}
+
+button.disabled:hover {
+    background:#DDD;
+}
+
+#container {
+    position:relative;
+    /* margin-left:-10px; */
+    /* margin-right:-10px; */
+    /* padding:10px; */
+    overflow:hidden;
+}
+
+#picking {
+    width:850px;
+}
+
+#secondary {
+    width:850px;
+}
+
+/* Specific classes for specific areas*/
+.upper_navbar_element {
+    flex-grow: 10;
+    background-color: #453075;
+
+    color: whitesmoke;
+    font-family: 'Hanken Grotesk';
+    font-size: 20px;
+    line-height: 40px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.upper_navbar_element:hover {
+    background-color: #322357;
+    color: lightgray;
+}
+
+.selected_upper_navbar_element {
+    flex-grow: 10;
+    background-color: #1f0042;
+
+    color: whitesmoke;
+    font-family: 'Hanken Grotesk';
+    font-size: 20px;
+    line-height: 40px;
+    text-align: center;
+    text-decoration: none;
+}
+
+#pick {
+    background:#453075;
+    color:whitesmoke;
+    font-size:larger;
+    font-weight:bold;
+    width:6em;
+    border-radius:5px;
+    margin-right:10px;
+}
+
+#pick.disabled {
+    background:#1f0042;
+}
+
+#pick:hover {
+    background:#322357;
+    color:lightgray;
+}
+
+.item-list {
+    padding:0;
+    list-style-type:none;
+    line-height:100px;
+}
+
+.item-list li {
+    margin:0;
+    display:inline-block;
+    height:100px;
+    width:100px;
+    line-height:100px;
+    border:3px solid transparent;
+    text-align:center;
+    position:relative;
+    vertical-align:top;
+    overflow:hidden;
+    border-radius:100%;
+    /* background:#F7F7F7; */
+    color:#000;
+}
+
+.item-list li img {
+    vertical-align:middle;
+    max-height:100%;
+    max-width:100%;
+}
+
+.item-list li span {
+    display:inline-block;
+    vertical-align:middle;
+    line-height:1.2;
+}
+
+.item-list {
+    line-height:150px;
+}
+
+.item-list li {
+    line-height:150px;
+    height:150px;
+    width:150px;
+}
+
+#evaluating li {
+    cursor:pointer;
+}
+
+#favorites li {
+    cursor:move;
+}
+
+.item-list li:hover {
+    background:#cfd2ff;
+}
+
+.item-list.sorting li:hover {
+    background:#F7F7F7;
+}
+
+#evaluating li.selected {
+    border:3px solid #9586cf;
+}
+
+#evaluating, #buttons {
+    text-align:center;
+    margin:auto;
+}
+
+#evaluating li.notice {
+    width:auto;
+    height:auto;
+    max-width:260px;
+    margin:auto;
+    background:#F7F7F7;
+    border-radius:10px;
+    padding:30px 30px;
+    color:#000;
+    text-align:center;
+    line-height:1.4;
+    cursor:auto;
+    font-size:10pt;
+}
+
+#buttons {
+    margin-top:30px;
+    position:relative;
+    z-index:3;
+}
+
+body {
+    background-image:url('https://zugerujk.net/images/gradient_v3_light.png ');
+    background-repeat:no-repeat;
+    background-size:100% 100%;
+    position:relative;
+    min-height:100vh;
+    margin:0px;
+    padding:0px;
+}
+
+* {
+    font-family: 'Hanken Grotesk', sans-serif;
+    color:whitesmoke;
+    z-index: 2;
+}
+
+p {
+    font-family: 'Hanken Grotesk', sans-serif;
+    color: whitesmoke;
+    font-size: 18px;
+    padding-left: 5px;
+    /* border: 1px solid;   */
+    overflow: hidden;
+}
+
+
+/* Structural classes*/
+.flex {
+    display:flex;
+    overflow: hidden;
+}
+
+.left {
+    width: 645px;
+    flex-grow: 1;
+    overflow: hidden;
+}
+
+.right {
+    flex-grow: 1;
+    border-left: 5px solid #1f0042;
+    width: 200px;
+    overflow:hidden;
+    /* height: auto; */
+}
+
+
+/* Specific classes for specific areas*/
+.upper_navbar_element {
+    flex-grow: 10;
+    background-color: #453075;
+
+    color: whitesmoke;
+    font-family: 'Hanken Grotesk';
+    font-size: 20px;
+    line-height: 40px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.upper_navbar_element:hover {
+    background-color: #322357;
+    color: lightgray;
+}
+
+.selected_upper_navbar_element {
+    flex-grow: 10;
+    background-color: #1f0042;
+
+    color: whitesmoke;
+    font-family: 'Hanken Grotesk';
+    font-size: 20px;
+    line-height: 40px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.upper_navbar_spacer {
+    width: 5px;
+    height: 40px;
+    background-color: #1f0042;
+}
+
+
+.news_feed_entry {
+    border: 12px solid #1f0042;
+    /* border-radius: 10px; */
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 6px;
+    margin-bottom: 14px;
+    height: auto;
+    background-color: #322357;
+    text-indent:10px;
+    font-size: 34px;
+}
+
+.news_feed_entry_divider {
+    border-top: 5px dashed #1f0042;
+}
+
+.news_feed_entry_end {
+    margin-top: 12px;
+    text-indent: 5px;
+    font-size: 12px;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: right;
+    line-height: 12px;
+}
+
+.blog_feed_entry {
+    border: 12px solid #1f0042;
+    display:flex;
+    /* border-radius: 10px; */
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 6px;
+    margin-bottom: 14px;
+    /* height: 50px; */
+    /* line-height: 50px; */
+    background-color: #322357;
+    text-indent:10px;
+    font-size: 30px;
+    flex-direction: row;
+}
+
+.blog_feed_entry_content {
+    text-indent: 0px;
+    padding-left: 10px;
+    margin-top: 4px;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.blog_feed_entry_image_as_text_left_margin {
+    margin-top:auto;
+    margin-bottom:auto;
+    margin-left:10px;
+}
+
+
+.blog_feed_entry_image_as_text {
+    margin-top:auto;
+    margin-bottom:auto;
+    margin-left:2px;
+}
+
+.blog_feed_entry_link {
+    text-indent:5px;
+    font-size: 34px;
+    line-height: 56.5px;
+    font-family: 'Courier New', Courier, monospace;
+    padding-right: 10px;
+    border-right: 5px dashed #1f0042;
+    min-width: 145px;
+    text-align: center;
+}
+
+.blog_feed_entry_end_cont {
+    flex-grow: 1;
+    /* line-height: 88px; */
+    text-indent: 5px;
+    font-size: 12px;
+    font-family: 'Courier New', Courier, monospace;
+    text-align:right
+}
+
+.blog_entry {
+    border: 12px solid #1f0042;
+    /* border-radius: 10px; */
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    height: auto;
+    background-color: #322357;
+    text-indent:10px;
+    font-size: 34px;
+}
+
+.caption {
+    margin-top: 0px;
+}
+
+.generic_vertical_spacer {
+    height:10px;
+    width:auto;
+}
+
+.filled_vertical_spacer {
+    margin-top:3px;
+    height:5px;
+    width:auto;
+    background-color: #1f0042;
+}
+
+.settingscheckbox {
+    padding-left: 5px;
+}
+
+.project_container {
+    height:240px;
+    width:225px;
+    border: 12px solid #1f0042;
+    background-color: #322357;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 6px;
+    margin-bottom: 14px;
+    padding:0px;
+    text-indent:0px;
+}
+
+.project_page_spacer {
+    height:auto;
+    width:21.5px;
+}
+
+.project_thumbnail {
+    width: 200px;
+    margin-top: 12.5px;
+    margin-bottom: 2px;
+    margin-left: 12.5px;
+    margin-right: 12.5px;
+    text-indent: 0px;
+}
+
+.project_title {
+    padding: 0px ;
+    text-indent: 0px;
+    padding-left:auto;
+    padding-right:auto;
+    font-size: 22px;
+}
+
+.project_description {
+    padding: 5px ;
+    text-indent: 0px;
+    padding-left:auto;
+    padding-right:auto;
+    font-size: 16px;
+    color:lightgray;
+}
+
+.featured_container {
+    height:auto;
+    width:170px;
+    border: 5px solid #1f0042;
+    background-color: #322357;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 6px;
+    margin-bottom: 14px;
+    padding:0px;
+    text-indent:0px;
+}
+
+.featured_thumbnail {
+    width: 160px;
+    margin-top: 5px;
+    margin-bottom: 2px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+/* Unique IDs for the main sections */
+#the_header {
+    height: 120px;
+    width: 850px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0px;
+    border: 13px solid #1f0042;
+    border-bottom: 0px;
+    /* border-radius: 50px; */
+    /* background-color: whitesmoke; */
+}
+
+#the_navbar {
+    height: 40px;
+    width: 850px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+    border: 13px solid #1f0042;
+    border-top: 5px solid #1f0042;
+    border-bottom: 5px solid #1f0042;
+}
+
+#the_body {
+    height: auto;
+    width: 850px;
+    margin: auto;
+    border: 13px solid #1f0042;
+    border-top: 0px;
+    border-bottom: 0px;
+    background-color: rgba(20, 8, 40, 1);
+
+}
+
+.body_extension {
+    height: auto;
+    width: 850px;
+    margin: auto;
+    border: 13px solid #1f0042;
+    border-top: 5px solid #1f0042;
+    /* border-bottom: 0px; */
+    background-color: rgba(20, 8, 40, 1);
+}
+
+#the_footer {
+    height: 100px;
+    width: 846px;
+    padding-right: 4px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 13px solid #1f0042;
+    border-top: 5px solid #1f0042;
+    background-color: rgba(20, 8, 40, 1);
+
+    text-align: right;
+    font-size: 12px;
+    color: whitesmoke;
+}
+
+/* All the rest of the Unique IDs*/
+/* Important shit, on most pages*/
+#zugerujknet_title {
+    font-size: 60px;
+    line-height: 120px;
+    text-indent: 15px;
+    background-color: rgba(20, 8, 40, 0.82);
+    color: whitesmoke
+}
+
+#header_right_secret {
+    background-image: url("https://zugerujk.net/images/Splashes/SplashSecret.png");
+    background-color: rgba(20, 8, 40, 1);
+}
+
+#header_right_00 {
+    background-image: url("https://zugerujk.net/images/Splashes/Splash00.png");
+    background-color: rgba(20, 8, 40, 1);
+}
+
+#header_right_01 {
+    background-image: url("https://zugerujk.net/images/Splashes/Splash01.png");
+    background-color: rgba(20, 8, 40, 1);
+}
+
+#header_right_02 {
+    background-image: url("https://zugerujk.net/images/Splashes/Splash02.png");
+    background-color: rgba(20, 8, 40, 1);
+}
+
+#header_right_03 {
+    background-image: url("https://zugerujk.net/images/Splashes/Splash03.png");
+    background-color: rgba(20, 8, 40, 1);
+}
+
+#header_right_04 {
+    background-image: url("https://zugerujk.net/images/Splashes/Splash04.png");
+    background-color: rgba(20, 8, 40, 1);
+}
+
+#header_right_05 {
+    background-image: url("https://zugerujk.net/images/Splashes/Splash05.png");
+    background-color: rgba(20, 8, 40, 1);
+}
+
+#header_right_06 {
+    background-image: url("https://zugerujk.net/images/Splashes/Splash06.png");
+    background-color: rgba(20, 8, 40, 1);
+}
+
+#header_right_07 {
+    background-image: url("https://zugerujk.net/images/Splashes/Splash07.png");
+    background-color: rgba(20, 8, 40, 1);
+    background-repeat:no-repeat
+}
+
+#body_left {
+    flex-direction: column;
+    font-size: 16px;
+    color: whitesmoke;
+    text-indent:3px;
+}
+
+#body_right {
+    flex-direction: column;
+    font-size: 16px;
+    color: whitesmoke;
+}
+
+@keyframes example {
+    from {transform: rotate(30deg);}
+    to {transform: rotate(30deg) translate(302px);}
+}
+
+#background_triangles_container {
+    position:absolute;
+    overflow:hidden;
+    height:100%;
+    width:100%;
+    top:0;
+    z-index: -2;
+}
+
+#background_triangles {
+    content: "";
+    position:absolute;
+    width:300%;
+    height:250%;
+    top:-100%;
+    left:-100%;
+    z-index: -2;
+    background: url(https://zugerujk.net/images/triangles_v1_light.png) 0 0 repeat;
+    transform: rotate(30deg);
+    /* animation-name: example; */
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+#background_triangles_overlay {
+    position:absolute;
+    overflow:hidden;
+    height:100%;
+    width:100%;
+    top:0;
+    z-index: -1;
+    background-image:url('https://zugerujk.net/images/gradient_v3_light_overlay.png');
+    opacity: 1;
+    background-repeat:no-repeat;
+    background-size:100% 100%;
+    mix-blend-mode: hue;
+}
+
+/*Less important stuff*/
+#newsfeed_archive_link {
+    font-size: 12px;
+    text-align: right;
+    text-indent: 3px;
+    width:auto;
+    margin-left:auto;
+}
+
+#settingstext {
+    font-size: 34px;
+}
