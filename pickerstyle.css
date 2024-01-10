@@ -215,29 +215,83 @@ button.disabled:hover {
     z-index:3;
 }
 
+.filled_vertical_spacer {
+    margin-top:3px;
+    height:5px;
+    width:auto;
+    background-color: #1f0042;
+}
+
+.settingscheckbox {
+    padding-left: 5px;
+}
+
+:root {
+    color-scheme: dark;
+}
+
+.body_extension {
+    height: auto;
+    width: 850px;
+    margin: auto;
+    border: 13px solid #1f0042;
+    border-top: 5px solid #1f0042;
+    /* border-bottom: 0px; */
+    background-color: rgba(20, 8, 40, 1);
+}
+
+#settingstext {
+    font-size: 34px;
+}
+
 body {
-    background-image:url('https://zugerujk.net/images/gradient_v3_light.png ');
+    background-image:url('https://zugerujk.net/images/SiteAssets/Background/gradient_v3_light.png');
     background-repeat:no-repeat;
-    background-size:100% 100%;
+    background-size: cover;
     position:relative;
     min-height:100vh;
+    max-width:100vw;
     margin:0px;
     padding:0px;
 }
 
 * {
     font-family: 'Hanken Grotesk', sans-serif;
-    color:whitesmoke;
+    color: whitesmoke;
     z-index: 2;
 }
 
 p {
-    font-family: 'Hanken Grotesk', sans-serif;
-    color: whitesmoke;
     font-size: 18px;
     padding-left: 5px;
-    /* border: 1px solid;   */
+    padding-right: 5px;
     overflow: hidden;
+    margin-block-start: 0.8em;
+    margin-block-end: 0.8em;
+}
+
+a {
+    text-decoration-thickness: 5%;
+}
+
+a:hover {
+    color: #9e9eff
+}
+
+h5 {
+    padding-top:0px;
+    padding-bottom:0px;
+    font-weight: normal;
+    font-size: 16px;
+    text-indent:5px;
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+}
+
+center {
+    padding-left: 0px;
+    margin-left: 0px;
+    text-indent: 0px;
 }
 
 
@@ -257,6 +311,7 @@ p {
     flex-grow: 1;
     border-left: 5px solid #1f0042;
     width: 200px;
+    max-width:200px;
     overflow:hidden;
     /* height: auto; */
 }
@@ -328,13 +383,10 @@ p {
 .blog_feed_entry {
     border: 12px solid #1f0042;
     display:flex;
-    /* border-radius: 10px; */
     margin-left: 20px;
     margin-right: 20px;
     margin-top: 6px;
     margin-bottom: 14px;
-    /* height: 50px; */
-    /* line-height: 50px; */
     background-color: #322357;
     text-indent:10px;
     font-size: 30px;
@@ -342,6 +394,8 @@ p {
 }
 
 .blog_feed_entry_content {
+    display:flex;
+    justify-content: space-between;
     text-indent: 0px;
     padding-left: 10px;
     margin-top: 4px;
@@ -365,21 +419,31 @@ p {
 .blog_feed_entry_link {
     text-indent:5px;
     font-size: 34px;
-    line-height: 56.5px;
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    text-decoration-skip-ink: none;
     font-family: 'Courier New', Courier, monospace;
     padding-right: 10px;
     border-right: 5px dashed #1f0042;
     min-width: 145px;
     text-align: center;
+    line-break: anywhere;
+    max-width:145px;
+}
+.blog_feed_entry_link:visited {
+    color: #9e9eff
 }
 
 .blog_feed_entry_end_cont {
-    flex-grow: 1;
     /* line-height: 88px; */
     text-indent: 5px;
     font-size: 12px;
     font-family: 'Courier New', Courier, monospace;
-    text-align:right
+    text-align:right;
+    vertical-align:bottom;
+    height:min-content;
+    margin-block-end: 0em;
 }
 
 .blog_entry {
@@ -402,17 +466,6 @@ p {
 .generic_vertical_spacer {
     height:10px;
     width:auto;
-}
-
-.filled_vertical_spacer {
-    margin-top:3px;
-    height:5px;
-    width:auto;
-    background-color: #1f0042;
-}
-
-.settingscheckbox {
-    padding-left: 5px;
 }
 
 .project_container {
@@ -494,14 +547,17 @@ p {
 }
 
 #the_navbar {
+    position: relative;
     height: 40px;
     width: 850px;
+    max-width:850px;
     margin-left: auto;
     margin-right: auto;
-    background-color: white;
+    background-color: #1f0042;
     border: 13px solid #1f0042;
     border-top: 5px solid #1f0042;
     border-bottom: 5px solid #1f0042;
+    overflow:visible;
 }
 
 #the_body {
@@ -515,17 +571,8 @@ p {
 
 }
 
-.body_extension {
-    height: auto;
-    width: 850px;
-    margin: auto;
-    border: 13px solid #1f0042;
-    border-top: 5px solid #1f0042;
-    /* border-bottom: 0px; */
-    background-color: rgba(20, 8, 40, 1);
-}
-
 #the_footer {
+    position:relative;
     height: 100px;
     width: 846px;
     padding-right: 4px;
@@ -553,45 +600,59 @@ p {
 #header_right_secret {
     background-image: url("https://zugerujk.net/images/Splashes/SplashSecret.png");
     background-color: rgba(20, 8, 40, 1);
+    background-repeat: no-repeat;
 }
 
 #header_right_00 {
     background-image: url("https://zugerujk.net/images/Splashes/Splash00.png");
     background-color: rgba(20, 8, 40, 1);
+    background-repeat: no-repeat;
 }
 
 #header_right_01 {
     background-image: url("https://zugerujk.net/images/Splashes/Splash01.png");
     background-color: rgba(20, 8, 40, 1);
+    background-repeat: no-repeat;
 }
 
 #header_right_02 {
     background-image: url("https://zugerujk.net/images/Splashes/Splash02.png");
     background-color: rgba(20, 8, 40, 1);
+    background-repeat: no-repeat;
 }
 
 #header_right_03 {
     background-image: url("https://zugerujk.net/images/Splashes/Splash03.png");
     background-color: rgba(20, 8, 40, 1);
+    background-repeat: no-repeat;
 }
 
 #header_right_04 {
     background-image: url("https://zugerujk.net/images/Splashes/Splash04.png");
     background-color: rgba(20, 8, 40, 1);
+    background-repeat: no-repeat;
 }
 
 #header_right_05 {
     background-image: url("https://zugerujk.net/images/Splashes/Splash05.png");
     background-color: rgba(20, 8, 40, 1);
+    background-repeat: no-repeat;
 }
 
 #header_right_06 {
     background-image: url("https://zugerujk.net/images/Splashes/Splash06.png");
     background-color: rgba(20, 8, 40, 1);
+    background-repeat: no-repeat;
 }
 
 #header_right_07 {
     background-image: url("https://zugerujk.net/images/Splashes/Splash07.png");
+    background-color: rgba(20, 8, 40, 1);
+    background-repeat:no-repeat
+}
+
+#header_right_08 {
+    background-image: url("https://zugerujk.net/images/Splashes/Splash08.png");
     background-color: rgba(20, 8, 40, 1);
     background-repeat:no-repeat
 }
@@ -609,7 +670,7 @@ p {
     color: whitesmoke;
 }
 
-@keyframes example {
+@keyframes triangles_animation {
     from {transform: rotate(30deg);}
     to {transform: rotate(30deg) translate(302px);}
 }
@@ -626,14 +687,14 @@ p {
 #background_triangles {
     content: "";
     position:absolute;
-    width:300%;
+    width:320%;
     height:250%;
     top:-100%;
     left:-100%;
     z-index: -2;
-    background: url(https://zugerujk.net/images/triangles_v1_light.png) 0 0 repeat;
+    background: url(https://zugerujk.net/images/SiteAssets/Background/triangles_v1_light.png) 0 0 repeat;
     transform: rotate(30deg);
-    /* animation-name: example; */
+    /* animation-name: triangles_animation; */
     animation-duration: 10s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
@@ -646,7 +707,7 @@ p {
     width:100%;
     top:0;
     z-index: -1;
-    background-image:url('https://zugerujk.net/images/gradient_v3_light_overlay.png');
+    background-image:url('https://zugerujk.net/images/SiteAssets/Background/gradient_v3_light_overlay.png');
     opacity: 1;
     background-repeat:no-repeat;
     background-size:100% 100%;
@@ -662,6 +723,39 @@ p {
     margin-left:auto;
 }
 
-#settingstext {
-    font-size: 34px;
+#fuster_closed {
+    position: absolute;
+    height: 50px;
+    top: -5px;
+    left: 880px;
+    width: 50px;
+    background-image:url('https://zugerujk.net/images/SiteAssets/Fuster/Fuster\ Idle.gif');
+    cursor:pointer;
+}
+
+#fuster_open {
+    position: absolute;
+    height: auto;
+    width:max-content;
+    min-width: 50px;
+    max-width: 250px;
+    top: -18px;
+    left: 867px;
+    background-image:none;
+    background-color: rgba(20, 8, 40, 1);
+    border: 13px solid #1f0042;
+    overflow:hidden;
+    cursor:pointer;
+}
+
+#fuster_image {
+    height:50px;
+    width:50px;
+    background-image:url('https://zugerujk.net/images/SiteAssets/Fuster/Fuster\ Open.gif');
+}
+
+#fuster_dialogue {
+    margin-top: 0px;
+    font-size: 16px;
+    padding-right:5px;
 }

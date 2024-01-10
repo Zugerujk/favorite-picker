@@ -1,8 +1,8 @@
 /*
     SPACER STUFF
 */
-let createVerticalSpacer = function() {
-    const new_vertical_spacer = document.createElement("div");
+const createVerticalSpacer = function() {
+    let new_vertical_spacer = document.createElement("div");
     new_vertical_spacer.setAttribute("class", "generic_vertical_spacer");
     return new_vertical_spacer;
 }
@@ -12,49 +12,62 @@ let createVerticalSpacer = function() {
 /*
     HEADER STUFF
 */
-let changeHeaderToSecret = function() {
+const changeHeaderToSecret = function() {
     const headerElement = document.getElementsByClassName("right")[0];
     console.log("Say hi to debug Alm 🥺");
     headerElement.id = "header_right_secret";
+    headerElement.title = "Art credit: Hidari";
 }
 
-let determineHeaderSeed = function() {
+const determineHeaderSeed = function() {
     let the_date = new Date();
     let seconds_since_epoch = Math.round(the_date.getTime() / 1000);
-    let header_seed = Math.floor(seconds_since_epoch / 3600) % 8;
+    let header_seed = Math.floor(seconds_since_epoch / 3600) % 9;
     console.log("The header seed is " + header_seed + ".");
     return header_seed;
 }
 
-let createHeaderRight = function() {
-    const header_element_right = document.createElement("div");
+const createHeaderRight = function() {
+    let header_element_right = document.createElement("div");
     header_element_right.setAttribute("class", "right");
     let header_number = determineHeaderSeed();
     
     switch (header_number) {
         case 0:
             header_element_right.setAttribute("id", "header_right_00");
+            header_element_right.setAttribute("title", "Art credit: MAJYKKS");
             break;
         case 1:
             header_element_right.setAttribute("id", "header_right_01");
+            header_element_right.setAttribute("title", "Photo credit: GuardianGlimmer");
             break;
         case 2:
             header_element_right.setAttribute("id", "header_right_02");
+            header_element_right.setAttribute("title", "Art credit: Meronpan");
             break;
         case 3:
             header_element_right.setAttribute("id", "header_right_03");
+            header_element_right.setAttribute("title", "Art credit: f0nk (emirulz)");
             break;
         case 4:
             header_element_right.setAttribute("id", "header_right_04");
+            header_element_right.setAttribute("title", "Art credit: Lambchopper");
             break;
         case 5:
             header_element_right.setAttribute("id", "header_right_05");
+            header_element_right.setAttribute("title", "Art credit: Crank");
             break;
         case 6:
             header_element_right.setAttribute("id", "header_right_06");
+            header_element_right.setAttribute("title", "Art credit: Prince Annihilation");
             break;
         case 7:
             header_element_right.setAttribute("id", "header_right_07");
+            header_element_right.setAttribute("title", "Photo credit: Mark Glickman. Art credit: Hidari");
+            break;
+        case 8:
+            header_element_right.setAttribute("id", "header_right_08");
+            header_element_right.setAttribute("title", "Art credit: Crank");
             break;
 
     }
@@ -64,21 +77,21 @@ let createHeaderRight = function() {
     return header_element_right;
 }
 
-let createHeader = function() {
-    const headerElement = document.getElementById("the_header");
+const createHeader = function() {
+    let header_element = document.getElementById("the_header");
     // Create Zugerujk.net left area
     let zugerujknet_title_text = "Zugerujk.net 😎"
-    const header_element_left = document.createElement("div");
+    let header_element_left = document.createElement("div");
     header_element_left.setAttribute("class", "left");
     header_element_left.setAttribute("id", "zugerujknet_title");
 
-    const header_element_left_text = document.createTextNode(zugerujknet_title_text);
+    let header_element_left_text = document.createTextNode(zugerujknet_title_text);
     header_element_left.appendChild(header_element_left_text);
     header_element_right = createHeaderRight();
 
-    headerElement.before(createVerticalSpacer());
-    headerElement.append(header_element_left);
-    headerElement.append(header_element_right);
+    header_element.before(createVerticalSpacer());
+    header_element.append(header_element_left);
+    header_element.append(header_element_right);
 }
 
 
@@ -86,7 +99,7 @@ let createHeader = function() {
 /*
     NAVBAR STUFF
 */
-let createNavbarElement = function(text = "blank", link = "") {
+const createNavbarElement = function(text = "blank", link = "") {
     let navbar_element;
     if (link == "") {  // A blocked navbar element
         navbar_element = document.createElement("div");
@@ -104,8 +117,8 @@ let createNavbarElement = function(text = "blank", link = "") {
     return navbar_element;
 };
 
-let createNavbarSpacer = function() {
-    const navbar_spacer = document.createElement("div");
+const createNavbarSpacer = function() {
+    let navbar_spacer = document.createElement("div");
     navbar_spacer.setAttribute("class", "upper_navbar_spacer");
 
     return navbar_spacer;
@@ -145,25 +158,24 @@ const createNavbar = function(blocked_space_arg = "") {
     gallery_navbar_element = createNavbarElement("Gallery", gallery_link);
     bio_navbar_element = createNavbarElement("About", bio_link);
 
-    // Create the spacer
-    spacer1 = createNavbarSpacer();
-    spacer2 = createNavbarSpacer();
-    spacer3 = createNavbarSpacer();
-    spacer4 = createNavbarSpacer();
-
     // Find the navbar div
-    const navbarMasterElement = document.getElementById("the_navbar"); // Like the master emerald
+    let navbar_master_element = document.getElementById("the_navbar"); // Like the master emerald
 
     // Append city amirite
-    navbarMasterElement.append(home_navbar_element);
-    navbarMasterElement.append(spacer1);
-    navbarMasterElement.append(blog_navbar_element);
-    navbarMasterElement.append(spacer2);
-    navbarMasterElement.append(projects_navbar_element);
-    navbarMasterElement.append(spacer3);
-    navbarMasterElement.append(gallery_navbar_element);
-    navbarMasterElement.append(spacer4);
-    navbarMasterElement.append(bio_navbar_element);
+    navbar_master_element.append(home_navbar_element);
+    navbar_master_element.append(createNavbarSpacer());
+    navbar_master_element.append(blog_navbar_element);
+    navbar_master_element.append(createNavbarSpacer());
+    navbar_master_element.append(projects_navbar_element);
+    navbar_master_element.append(createNavbarSpacer());
+    navbar_master_element.append(gallery_navbar_element);
+    navbar_master_element.append(createNavbarSpacer());
+    navbar_master_element.append(bio_navbar_element);
+
+    // Add Fuster
+    fuster_element = createFusterElement();
+    navbar_master_element.append(fuster_element);
+    
 };
 
 
@@ -172,16 +184,16 @@ const createNavbar = function(blocked_space_arg = "") {
     FOOTER STUFF
 */
 const createFooter = function() {
-    let generic_footer_text = "v1.0";
+    let generic_footer_text = "All rights reserved, Me, 2024. v0.6.3";
     
     // Find the navbar div
-    const footerElement = document.getElementById("the_footer");
+    let footer_element = document.getElementById("the_footer");
     
-    const navbar_element_text = document.createTextNode(generic_footer_text);
-    footerElement.after(createVerticalSpacer());
-    footerElement.after(createVerticalSpacer());
-    footerElement.appendChild(navbar_element_text);
-    
+    let footer_element_text = document.createTextNode(generic_footer_text);
+    footer_element.after(createVerticalSpacer());
+    footer_element.after(createVerticalSpacer());
+    footer_element.appendChild(footer_element_text);
+
 };
 
 
@@ -196,3 +208,56 @@ const createElements = function(navbar_blocked_space_arg="") {
 }
 
 
+
+/*
+    FUSTER STUFF
+*/
+
+const createFusterElement = function() {
+    let fuster_element;
+    fuster_element = document.createElement("div");
+    fuster_element.setAttribute("class", "settings_icon");
+    fuster_element.setAttribute("id", "fuster_closed");
+    fuster_element.setAttribute("onclick", "fusterOpen()");
+    return fuster_element;
+}
+
+const fusterOpen = function() {
+    let fuster_element = document.getElementsByClassName("settings_icon")[0];
+    console.log("Opening Fuster");
+
+    // Change fuster's div ID to appear vastly different
+    fuster_element.setAttribute("id", "fuster_open");
+    fuster_element.setAttribute("onclick", "fusterClose()");
+
+    // Create an image of fuster within the div
+    let fuster_image = document.createElement("div");
+    fuster_image.id = "fuster_image";
+    fuster_element.append(fuster_image);
+
+    // Add dialogue for fuster, found within the head of the document.
+    fuster_dialogue_div = document.createElement("p"); 
+    fuster_dialogue_div.setAttribute("id", "fuster_dialogue");
+    let fuster_dialogue = "\"Hi!\"";
+    try {
+        head_text = document.querySelector('meta[name="fuster-dialogue"]').content;
+        console.log(head_text);
+        fuster_dialogue = "\"" + head_text + "\""
+    }
+    catch {
+        console.log("Issue finding Fuster dialogue - may be null.")
+    }
+    fuster_dialogue_div.appendChild(document.createTextNode(fuster_dialogue));
+    fuster_element.append(fuster_dialogue_div);
+}
+
+const fusterClose = function() {
+    let fuster_element = document.getElementsByClassName("settings_icon")[0];
+    console.log("Resetting Fuster");
+
+    // Inelegant, but hey! Completely wipes fuster, and manually resets him.
+    fuster_element.innerHTML = '';
+    fuster_element.setAttribute("class", "settings_icon");
+    fuster_element.setAttribute("id", "fuster_closed");
+    fuster_element.setAttribute("onclick", "fusterOpen()");
+}
